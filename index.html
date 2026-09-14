@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AMANRAJ GILL (ARG) | Official Music Portal</title>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-deep: #08080a;
+            --bg-card: rgba(18, 18, 24, 0.75);
+            --bg-card-hover: rgba(28, 28, 38, 0.9);
+            --gold: #e5a93c;
+            --gold-glow: rgba(229, 169, 60, 0.35);
+            --gold-gradient: linear-gradient(135deg, #ffd782 0%, #d4952b 50%, #9e6912 100%);
+            --silver-muted: #8e95a5;
+            --white: #ffffff;
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --spotify-green: #1DB954;
+            --font-display: 'Cinzel', serif;
+            --font-modern: 'Syne', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--white);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 12% 15%, rgba(229, 169, 60, 0.06) 0%, transparent 45%),
+                radial-gradient(circle at 88% 85%, rgba(138, 43, 226, 0.04) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .ambient-noise {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            opacity: 0.03;
+            z-index: 999;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Navigation Header */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 10, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-glass);
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .arg-tag {
+            font-family: var(--font-modern);
+            font-weight: 800;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: #08080a;
+            background: var(--gold-gradient);
+            padding: 2px 10px;
+            border-radius: 6px;
+            box-shadow: 0 0 15px var(--gold-glow);
+        }
+
+        .brand-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--silver-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .social-pill-nav {
+            display: flex;
+            gap: 14px;
+        }
+
+        .social-pill-nav a {
+            color: var(--silver-muted);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-pill-nav a:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 4rem 4rem;
+            overflow: hidden;
+        }
+
+        .hero-bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-modern);
+            font-size: 26vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.015);
+            user-select: none;
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1300px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(229, 169, 60, 0.1);
+            border: 1px solid rgba(229, 169, 60, 0.3);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-modern);
+            font-size: 4.8rem;
+            line-height: 1;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-title span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--silver-muted);
+            max-width: 540px;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: #08080a;
+            padding: 1rem 2.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px var(--gold-glow);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(229, 169, 60, 0.5);
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-glass);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-3px);
+        }
+
+        /* Hero Graphic Card */
+        .hero-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            backdrop-filter: blur(25px);
+        }
+
+        .hero-card-badge {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-metric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--border-glass);
+            padding-top: 1.5rem;
+        }
+
+        .metric h4 {
+            font-family: var(--font-modern);
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .metric p {
+            font-size: 0.78rem;
+            color: var(--silver-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Wrappers */
+        .section-wrap {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 6rem 4rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header .sub {
+            color: var(--gold);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-modern);
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        /* Official Social & Streaming Hubs */
+        .hubs-wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hub-link {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            padding: 2.2rem 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hub-link:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .hub-link i {
+            font-size: 2.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hub-link:hover i {
+            transform: scale(1.15);
+        }
+
+        .hub-link.spotify:hover { border-color: #1DB954; }
+        .hub-link.spotify i { color: #1DB954; }
+
+        .hub-link.apple:hover { border-color: #fc3c44; }
+        .hub-link.apple i { color: #fc3c44; }
+
+        .hub-link.youtube:hover { border-color: #FF0000; }
+        .hub-link.youtube i { color: #FF0000; }
+
+        .hub-link.instagram:hover { border-color: #E1306C; }
+        .hub-link.instagram i { color: #E1306C; }
+
+        .hub-link span.platform-name {
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .hub-link span.status-note {
+            font-size: 0.75rem;
+            color: var(--silver-muted);
+        }
+
+        /* Bio Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .bio-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bio-p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #d1d5db;
+            margin-bottom: 1.4rem;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .trait-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: rgba(229, 169, 60, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .trait-card i {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+
+        .trait-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .trait-card p {
+            font-size: 0.82rem;
+            color: var(--silver-muted);
+            line-height: 1.5;
+        }
+
+        /* Filter Controls & Search */
+        .controls-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            background: var(--bg-card);
+            padding: 1.2rem 1.8rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-glass);
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-glass);
+            color: var(--silver-muted);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.25s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--gold);
+            color: #08080a;
+            border-color: var(--gold);
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-glass);
+            border-radius: 50px;
+            padding: 10px 18px 10px 42px;
+            color: var(--white);
+            font-size: 0.85rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--silver-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Song Card Listing (Chronological: Newest to Oldest) */
+        .songs-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .song-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 1.2rem 2rem;
+            display: grid;
+            grid-template-columns: 55px 2.2fr 1.6fr 1fr 180px;
+            align-items: center;
+            transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .song-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(229, 169, 60, 0.4);
+            transform: translateX(6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .song-idx {
+            font-family: var(--font-modern);
+            font-size: 1.05rem;
+            color: var(--silver-muted);
+            font-weight: 700;
+        }
+
+        .song-main {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .song-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .song-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .badge-tag {
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-latest {
+            background: rgba(229, 169, 60, 0.15);
+            color: var(--gold);
+            border: 1px solid rgba(229, 169, 60, 0.4);
+        }
+
+        .badge-hit {
+            background: rgba(255, 255, 255, 0.08);
+            color: #d1d5db;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .song-artists {
+            font-size: 0.82rem;
+            color: var(--silver-muted);
+        }
+
+        .song-artists span {
+            color: #d1d5db;
+        }
+
+        .song-cat {
+            font-size: 0.8rem;
+            color: var(--silver-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .song-year {
+            font-family: var(--font-modern);
+            font-size: 0.95rem;
+            color: var(--silver-muted);
+            font-weight: 600;
+        }
+
+        /* Spotify Direct Button (No Preview Audio Player) */
+        .spotify-btn {
+            background: rgba(29, 185, 84, 0.12);
+            border: 1px solid rgba(29, 185, 84, 0.4);
+            color: #1DB954;
+            padding: 9px 18px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            width: fit-content;
+            margin-left: auto;
+        }
+
+        .spotify-btn:hover {
+            background: #1DB954;
+            color: #08080a;
+            box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
+            transform: scale(1.04);
+        }
+
+        #noResults {
+            display: none;
+            text-align: center;
+            padding: 4rem;
+            color: var(--silver-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-glass);
+            background: #050507;
+            padding: 5rem 4rem 2.5rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            color: var(--silver-muted);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            margin-top: 1rem;
+            max-width: 380px;
+        }
+
+        .footer-col h5 {
+            font-family: var(--font-modern);
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1.4rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul a {
+            color: var(--silver-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 2rem;
+            font-size: 0.78rem;
+            color: var(--silver-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero { padding: 7rem 2rem 3rem; }
+            .hero-container { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-title { font-size: 3.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .hubs-wrapper { grid-template-columns: repeat(2, 1fr); }
+            .song-card { grid-template-columns: 40px 1.8fr 1fr 150px; }
+            .song-cat { display: none; }
+            nav { padding: 1.2rem 2rem; }
+            .section-wrap { padding: 4rem 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.8rem; }
+            .song-card { grid-template-columns: 1fr; gap: 12px; padding: 1.2rem; }
+            .song-idx { display: none; }
+            .spotify-btn { margin-left: 0; width: 100%; }
+            .hubs-wrapper { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-noise"></div>
+
+    <!-- Navigation Header -->
+    <nav>
+        <a href="#home" class="brand-logo">
+            <span class="arg-tag">ARG</span>
+            <span class="brand-name">AMANRAJ GILL</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#discography">Discography</a></li>
+            <li><a href="#about">Bio</a></li>
+            <li><a href="#channels">Official Portals</a></li>
+        </ul>
+
+        <div class="social-pill-nav">
+            <a href="https://open.spotify.com/artist/07hzX8SH6CEg7B2yl4hoKs" target="_blank" title="Spotify"><i class="fa-brands fa-spotify"></i></a>
+            <a href="https://music.apple.com/in/artist/amanraj-gill/1457706097" target="_blank" title="Apple Music"><i class="fa-brands fa-apple"></i></a>
+            <a href="https://www.youtube.com/@AmanrajGill" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/amanrajgill_/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-bg-text">ARG</div>
+        <div class="hero-container">
+            <div>
+                <div class="hero-tagline">
+                    <i class="fa-solid fa-crown"></i> The Vanguard of Haryanvi Music
+                </div>
+                <h1 class="hero-title">
+                    AMANRAJ <span>GILL.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Powerhouse vocalist, lyricist, and modern folk innovator. Defining the new era of desi anthems with unmatched swagger and raw energy.
+                </p>
+                <div class="hero-cta">
+                    <a href="#discography" class="btn-gold">
+                        <i class="fa-solid fa-fire"></i> Latest Releases First
+                    </a>
+                    <a href="https://open.spotify.com/artist/07hzX8SH6CEg7B2yl4hoKs" target="_blank" class="btn-glass">
+                        <i class="fa-brands fa-spotify" style="color: #1DB954;"></i> Follow on Spotify
+                    </a>
+                </div>
+            </div>
+
+            <!-- Spotlight Card -->
+            <div class="hero-card">
+                <div class="hero-card-badge">
+                    <span class="arg-tag">ARG</span>
+                    <span style="color: var(--gold); font-size: 0.75rem; letter-spacing: 1.5px;"><i class="fa-solid fa-circle-check"></i> VERIFIED ON SPOTIFY</span>
+                </div>
+                <h3 style="font-family: var(--font-modern); font-size: 1.6rem; margin-bottom: 0.4rem;">Stream The Sound</h3>
+                <p style="color: var(--silver-muted); font-size: 0.85rem; line-height: 1.6;">
+                    Featuring consecutive anthems: <em>Hathkadiyan</em>, <em>Hopeless</em>, <em>Circle</em>, <em>Tag Awara Ke</em>, <em>Beretta</em> and timeless megahits.
+                </p>
+
+                <div class="hero-metric-grid">
+                    <div class="metric">
+                        <h4>500M+</h4>
+                        <p>Total Streams</p>
+                    </div>
+                    <div class="metric">
+                        <h4>#1 Desi</h4>
+                        <p>Top Chart Impact</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Official Hubs -->
+    <section class="section-wrap" id="channels" style="padding-top: 1rem; padding-bottom: 4rem;">
+        <div class="section-header">
+            <span class="sub">Official Portals</span>
+            <h2>Direct Channels</h2>
+        </div>
+
+        <div class="hubs-wrapper">
+            <a href="https://open.spotify.com/artist/07hzX8SH6CEg7B2yl4hoKs" target="_blank" class="hub-link spotify">
+                <i class="fa-brands fa-spotify"></i>
+                <span class="platform-name">Spotify</span>
+                <span class="status-note">Verified Artist Catalog</span>
+            </a>
+
+            <a href="https://music.apple.com/in/artist/amanraj-gill/1457706097" target="_blank" class="hub-link apple">
+                <i class="fa-brands fa-apple"></i>
+                <span class="platform-name">Apple Music</span>
+                <span class="status-note">Lossless Audio Library</span>
+            </a>
+
+            <a href="https://www.youtube.com/@AmanrajGill" target="_blank" class="hub-link youtube">
+                <i class="fa-brands fa-youtube"></i>
+                <span class="platform-name">YouTube</span>
+                <span class="status-note">Official Music Videos</span>
+            </a>
+
+            <a href="https://www.instagram.com/amanrajgill_/" target="_blank" class="hub-link instagram">
+                <i class="fa-brands fa-instagram"></i>
+                <span class="platform-name">Instagram</span>
+                <span class="status-note">Official ARG Profile</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Official Discography Section (Chronological: Latest -> Oldest) -->
+    <section class="section-wrap" id="discography">
+        <div class="section-header">
+            <span class="sub">Verified Discography</span>
+            <h2>All Songs (Latest to Old)</h2>
+            <p style="color: var(--silver-muted); max-width: 600px; margin: 0.8rem auto 0; font-size: 0.9rem;">
+                Official singles and collaborative tracks available on Spotify. Arranged strictly chronologically from the newest releases to his debut classics.
+            </p>
+        </div>
+
+        <!-- Controls: Filters & Search -->
+        <div class="controls-bar">
+            <div class="filter-tags">
+                <button class="filter-btn active" data-filter="all">All Tracks (<span id="totalCount">0</span>)</button>
+                <button class="filter-btn" data-filter="2026">2026 Drops</button>
+                <button class="filter-btn" data-filter="2025">2025 Hits</button>
+                <button class="filter-btn" data-filter="2024">2024</button>
+                <button class="filter-btn" data-filter="classics">Classics (2021-23)</button>
+            </div>
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="songSearch" placeholder="Search track name, artist or year..." />
+            </div>
+        </div>
+
+        <!-- Songs Grid -->
+        <div class="songs-grid" id="songsContainer"></div>
+
+        <div id="noResults">
+            <i class="fa-regular fa-face-frown" style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--gold);"></i>
+            <p>No songs found matching your search term.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-wrap" id="about">
+        <div class="section-header">
+            <span class="sub">The Journey</span>
+            <h2>About Amanraj Gill (ARG)</h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="bio-box">
+                <p class="bio-p">
+                    Hailing from the heartland of Haryana, **Amanraj Gill (ARG)** has carved an unmistakable legacy as a songwriter, composer, and vocalist whose voice cuts straight to the core of folk ethos and contemporary music.
+                </p>
+                <p class="bio-p">
+                    With an ability to move effortlessly between thunderous desi anthems like <em>Tag Awara Ke</em>, <em>Hathkadiyan</em>, and <em>Circle</em>, to soulful, poignant records like <em>Hopeless</em> and <em>Kasht</em>, ARG continues to set streaming records.
+                </p>
+                <p class="bio-p" style="margin-bottom: 0;">
+                    His distinct, unapologetic voice and signature sound have made him one of the most streamed and celebrated regional artists on Spotify and YouTube worldwide.
+                </p>
+            </div>
+
+            <div class="traits-grid">
+                <div class="trait-card">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                    <h3>Signature Raw Tone</h3>
+                    <p>An unmistakable heavy-set acoustic delivery that commands every track.</p>
+                </div>
+                <div class="trait-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>High-Energy Anthemics</h3>
+                    <p>Blends desi rustic poetry with cutting-edge 808s and modern hip-hop rhythm.</p>
+                </div>
+                <div class="trait-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Continuous Chart Success</h3>
+                    <p>Consistent viral chart numbers and millions of Spotify streams.</p>
+                </div>
+                <div class="trait-card">
+                    <i class="fa-solid fa-gem"></i>
+                    <h3>The ARG Brand</h3>
+                    <p>Symbol of authenticity, swagger, and modern Haryanvi pride.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span class="arg-tag">ARG</span>
+                    <span class="brand-name">AMANRAJ GILL</span>
+                </div>
+                <p>
+                    The official digital directory for Amanraj Gill (ARG). Listen to all confirmed releases directly on Spotify.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#discography">Full Discography</a></li>
+                    <li><a href="#about">About ARG</a></li>
+                    <li><a href="#channels">Streaming Links</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Verified Platforms</h5>
+                <ul>
+                    <li><a href="https://open.spotify.com/artist/07hzX8SH6CEg7B2yl4hoKs" target="_blank"><i class="fa-brands fa-spotify"></i> Spotify</a></li>
+                    <li><a href="https://music.apple.com/in/artist/amanraj-gill/1457706097" target="_blank"><i class="fa-brands fa-apple"></i> Apple Music</a></li>
+                    <li><a href="https://www.youtube.com/@AmanrajGill" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube Official</a></li>
+                    <li><a href="https://www.instagram.com/amanrajgill_/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="curYear"></span> Amanraj Gill (ARG) Official. All Rights Reserved.</p>
+            <p style="color: var(--silver-muted);">Designed for True Haryanvi Sound Fans.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript: Dynamic Discography Engine (Strictly Latest to Oldest) -->
+    <script>
+        // Confirmed tracks on Spotify arranged chronologically (NEWEST TO OLDEST)
+        const songsData = [
+            { id: 1, title: "Hathkadiyan", featured: "Amanraj Gill, Gauhar Dhillon", year: "2026", group: "2026", tag: "New Drop", isLatest: true, type: "Desi Folk" },
+            { id: 2, title: "Kasht", featured: "Amanraj Gill, Preeti Choudhary", year: "2026", group: "2026", tag: "Latest Single", isLatest: true, type: "Melodic" },
+            { id: 3, title: "Saadi Bholi", featured: "Amanraj Gill, Preeti Choudhary, AJ Fakira", year: "2026", group: "2026", tag: "Recent Hit", isLatest: true, type: "Desi Swag" },
+            { id: 4, title: "Darling", featured: "Amanraj Gill, Sapna Choudhary, Komal Chaudhary", year: "2026", group: "2026", tag: "Trending", isLatest: true, type: "Commercial" },
+            { id: 5, title: "Shock", featured: "Amanraj Gill, Jaya Rohilla, RB Gujjar", year: "2026", group: "2026", tag: "Recent Single", isLatest: true, type: "Desi Drill" },
+            { id: 6, title: "Hopeless", featured: "Amanraj Gill, Prem Lata, AJ Fakira", year: "2025", group: "2025", tag: "Mega Hit", isLatest: false, type: "Heartbreak" },
+            { id: 7, title: "Circle", featured: "Amanraj Gill, Manisha Sharma, Shivani Yadav", year: "2025", group: "2025", tag: "Superhit", isLatest: false, type: "Gangster Swag" },
+            { id: 8, title: "Beretta", featured: "Amanraj Gill, Jaya Rohilla, AJ Fakira", year: "2025", group: "2025", tag: "Banger", isLatest: false, type: "Desi Drill" },
+            { id: 9, title: "Number Plate (Refixed Beretta)", featured: "Amanraj Gill, Jaya Rohilla, Shivani Yadav", year: "2025", group: "2025", tag: "Remix Hit", isLatest: false, type: "Urban Desi" },
+            { id: 10, title: "Bhaga Aale", featured: "Amanraj Gill, Sushila Takhar, Pranjal Dahiya", year: "2025", group: "2025", tag: "Viral Anthem", isLatest: false, type: "Folk Pop" },
+            { id: 11, title: "Tag Awara Ke", featured: "Amanraj Gill, Shiva Choudhary, Shivani Yadav", year: "2024", group: "2024", tag: "Chartbuster", isLatest: false, type: "High Voltage" },
+            { id: 12, title: "30 Ka Saman", featured: "Amanraj Gill, Shiva Choudhary, Pranjal Dahiya", year: "2024", group: "2024", tag: "Popular", isLatest: false, type: "Gangster Swag" },
+            { id: 13, title: "Insecure", featured: "Amanraj Gill, Shivani Yadav", year: "2024", group: "2024", tag: "Melodic", isLatest: false, type: "Romantic Folk" },
+            { id: 14, title: "Protocol", featured: "Amanraj Gill, Rashmi Nishad", year: "2024", group: "2024", tag: "Original", isLatest: false, type: "Desi Beat" },
+            { id: 15, title: "Current", featured: "Amanraj Gill, Shiva Choudhary", year: "2024", group: "2024", tag: "Banger", isLatest: false, type: "Club Beat" },
+            { id: 16, title: "Lal Dabbi", featured: "Amanraj Gill, Bulbul, Tarun Haritas", year: "2023", group: "classics", tag: "Blockbuster", isLatest: false, type: "Desi Pop" },
+            { id: 17, title: "Badnam Gaam", featured: "Amanraj Gill, Komal Chaudhary, Sruishty Mann", year: "2023", group: "classics", tag: "All-Time Hit", isLatest: false, type: "Native Folk" },
+            { id: 18, title: "System Tagda", featured: "Amanraj Gill, Khushi Baliyan, Vishakha", year: "2023", group: "classics", tag: "Dance Hit", isLatest: false, type: "Commercial" },
+            { id: 19, title: "Challiya", featured: "Amanraj Gill, Masoom Sharma", year: "2023", group: "classics", tag: "Collab Hit", isLatest: false, type: "Raw Folk" },
+            { id: 20, title: "Kaana Pe Baal", featured: "Amanraj Gill, Komal Chaudhary", year: "2022", group: "classics", tag: "Classic Hit", isLatest: false, type: "Desi Folk" },
+            { id: 21, title: "Chora Jaat Ka", featured: "Amanraj Gill, Rahul Kadyan", year: "2022", group: "classics", tag: "Native Pride", isLatest: false, type: "Anthem" },
+            { id: 22, title: "Kaali Riffle", featured: "Amanraj Gill Solo", year: "2022", group: "classics", tag: "Attitude", isLatest: false, type: "Gangster Swag" },
+            { id: 23, title: "Gaadi Paache Gaadi", featured: "Amanraj Gill, Bulbul, Pranjal Dahiya", year: "2021", group: "classics", tag: "Signature Anthem", isLatest: false, type: "Mega Hit" },
+            { id: 24, title: "Kale Kagaz", featured: "Amanraj Gill, Shiva Choudhary, Pranjal Dahiya", year: "2021", group: "classics", tag: "Legendary Hit", isLatest: false, type: "All-Time Folk" },
+            { id: 25, title: "Yaar Badmash", featured: "Amanraj Gill Solo", year: "2021", group: "classics", tag: "Breakthrough", isLatest: false, type: "Gangster Swag" },
+            { id: 26, title: "System Hang", featured: "Amanraj Gill", year: "2021", group: "classics", tag: "Early Hit", isLatest: false, type: "Party Anthem" }
+        ];
+
+        // Format direct Spotify query link for each specific song
+        function getSpotifyLink(songName) {
+            const query = encodeURIComponent("Amanraj Gill " + songName);
+            return `https://open.spotify.com/search/${query}`;
+        }
+
+        const container = document.getElementById('songsContainer');
+        const searchInput = document.getElementById('songSearch');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const noResults = document.getElementById('noResults');
+        const totalCountSpan = document.getElementById('totalCount');
+        const curYearSpan = document.getElementById('curYear');
+
+        curYearSpan.textContent = new Date().getFullYear();
+        totalCountSpan.textContent = songsData.length;
+
+        function renderSongs(data) {
+            container.innerHTML = '';
+            if (data.length === 0) {
+                noResults.style.display = 'block';
+                return;
+            }
+            noResults.style.display = 'none';
+
+            data.forEach((song, index) => {
+                const card = document.createElement('div');
+                card.className = 'song-card';
+                card.innerHTML = `
+                    <div class="song-idx">#${String(index + 1).padStart(2, '0')}</div>
+                    <div class="song-main">
+                        <div class="song-title-wrap">
+                            <span class="song-title">${song.title}</span>
+                            <span class="badge-tag ${song.isLatest ? 'badge-latest' : 'badge-hit'}">${song.tag}</span>
+                        </div>
+                        <div class="song-artists">${song.featured}</div>
+                    </div>
+                    <div class="song-cat"><i class="fa-solid fa-compact-disc" style="color: var(--gold); margin-right: 6px;"></i>${song.type}</div>
+                    <div class="song-year">${song.year}</div>
+                    <a href="${getSpotifyLink(song.title)}" target="_blank" class="spotify-btn" title="Listen on Spotify">
+                        <i class="fa-brands fa-spotify"></i> Listen on Spotify
+                    </a>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Initial Chronological Render (Latest to Old)
+        renderSongs(songsData);
+
+        // Filter Functionality
+        let currentFilter = 'all';
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.getAttribute('data-filter');
+                filterAndSearch();
+            });
+        });
+
+        // Search Input
+        searchInput.addEventListener('input', () => {
+            filterAndSearch();
+        });
+
+        function filterAndSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            const filtered = songsData.filter(song => {
+                const matchesFilter = (currentFilter === 'all') || 
+                                      (currentFilter === '2026' && song.year === '2026') ||
+                                      (currentFilter === '2025' && song.year === '2025') ||
+                                      (currentFilter === '2024' && song.year === '2024') ||
+                                      (currentFilter === 'classics' && parseInt(song.year) <= 2023);
+
+                const matchesSearch = song.title.toLowerCase().includes(query) ||
+                                      song.featured.toLowerCase().includes(query) ||
+                                      song.year.includes(query) ||
+                                      song.type.toLowerCase().includes(query) ||
+                                      song.tag.toLowerCase().includes(query);
+
+                return matchesFilter && matchesSearch;
+            });
+            renderSongs(filtered);
+        }
+    </script>
+</body>
+</html>
